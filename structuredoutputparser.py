@@ -1,29 +1,27 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
-from langchain.output_parsers.structured import StructuredOutputParser, ResponseSchema
+from pydantic import BaseModel, Field
 
 load_dotenv()
 
+# Define structured output schema using Pydantic
+class Facts(BaseModel):
+    fact_1: str = Field(description="Fact 1 about the topic")
+    fact_2: str = Field(description="Fact 2 about the topic")
+    fact_3: str = Field(description="Fact 3 about the topic")
 
-model = ChatOpenAI()
+# Create model with structured output
+model = ChatOpenAI().with_structured_output(Facts)
 
-schema = [
-    ResponseSchema(name='fact_1', description='Fact 1 about the topic'),
-    ResponseSchema(name='fact_2', description='Fact 2 about the topic'),
-    ResponseSchema(name='fact_3', description='Fact 3 about the topic'),
-]
-
-parser = StructuredOutputParser.from_response_schemas(schema)
-
+# Prompt
 template = PromptTemplate(
-    template='Give 3 fact about {topic} \n {format_instruction}',
-    input_variables=['topic'],
-    partial_variables={'format_instruction':parser.get_format_instructions()}
+    template="Give 3 facts about {topic}",
+    input_variables=["topic"],
 )
 
-chain = template | model | parser
+chain = template | model
 
-result = chain.invoke({'topic':'Heavenly bodies'})
+result = chain.invoke({"topic": "Zombies"})
 
 print(result)
