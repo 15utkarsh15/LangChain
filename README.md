@@ -1,4 +1,4 @@
-# LangChain Learning
+#LangChain Learning
 LangChain Learning 🚀
 
 This repository documents my journey learning LangChain by building small, practical, and working examples.
