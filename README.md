@@ -23,32 +23,37 @@ cd LangChain
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# LangChain Chains — Examples
+
+A small set of Python examples showing simple, sequential, parallel, and conditional chains.
+
+Quick start
+- Create a virtual environment and install dependencies:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Configuration
+Run an example
 
-Add your OpenAI API key to a `.env` file:
-
-```
-OPENAI_API_KEY=your_key
-```
-
-## Run Examples
-
-```bash
+```powershell
 python simple_chain.py
 python sequential_chain.py
 python parallel_chain.py
 python conditional_chain.py
 ```
 
-Each script shows the results and visualizes the chain structure.
+What’s here
+What’s here
+- `simple_chain.py` — a single prompt → model → output example (get started fast)
+- `sequential_chain.py` — multiple steps where each output feeds the next
+- `parallel_chain.py` — run independent tasks at the same time and combine results
+- `conditional_chain.py` — choose different paths based on simple logic
 
-## Files
+Contributing
+- Open issues or pull requests with small, focused changes.
 
-- `simple_chain.py` — Getting started with chains
-- `sequential_chain.py` — Multi-step processing 
-- `parallel_chain.py` — Running things concurrently
-- `conditional_chain.py` — Smart branching with LLMs
+License
+- See project files for license details.
