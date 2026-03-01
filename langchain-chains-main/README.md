@@ -45,15 +45,11 @@ python parallel_chain.py
 python conditional_chain.py
 ```
 
-What’s here
-What’s here
-- `simple_chain.py` — a single prompt → model → output example (get started fast)
-- `sequential_chain.py` — multiple steps where each output feeds the next
-- `parallel_chain.py` — run independent tasks at the same time and combine results
-- `conditional_chain.py` — choose different paths based on simple logic
+Each script shows the results and visualizes the chain structure.
 
-Contributing
-- Open issues or pull requests with small, focused changes.
+## Files
 
-License
-- See project files for license details.
+- `simple_chain.py` — Getting started with chains
+- `sequential_chain.py` — Multi-step processing 
+- `parallel_chain.py` — Running things concurrently
+- `conditional_chain.py` — Smart branching with LLMs
