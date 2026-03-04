@@ -25,7 +25,7 @@ parallel_chain = RunnableParallel({
     'linkedin': RunnableSequence(prompt2, model, parser)
 })
 
-result = parallel_chain.invoke({'topic':'AI'})
+result = parallel_chain.invoke({'topic':'Gen Ai'})
 
 print(result['tweet'])
 print(result['linkedin'])

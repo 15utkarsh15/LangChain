@@ -5,6 +5,6 @@ load_dotenv()
 
 model = ChatOpenAI(model='gpt-4', temperature=1.5)
 
-result = model.invoke("Write a 5 line poem on cricket")
+result = model.invoke("Write a 5 line poem on life")
 
 print(result.content)
