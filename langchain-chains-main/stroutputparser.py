@@ -24,6 +24,6 @@ parser = StrOutputParser()
 
 chain = template1 | model | parser | template2 | model | parser
 
-result = chain.invoke({'topic':'The impact of climate change on global agriculture'})
+result = chain.invoke({'topic':'upcoming job fields '})
 
 print(result)
