@@ -32,4 +32,4 @@ branch_chain = RunnableBranch(
 
 final_chain =report_gen_chain | branch_chain
 
-print(final_chain.invoke({'topic':'Ind vs Pak'}))
+print(final_chain.invoke({'topic':'cricket rivalary of Ind vs Pak'}))
